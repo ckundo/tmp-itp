@@ -1,64 +1,45 @@
 <html>
-<head>
+  <head>
+    <title>ARIA Example</title>
+  </head>
+  <body>
+    <h1>Example #2</h1>
 
-  <title>ARIA Example</title>
+    <span>Number of times clicked:</span> <span id="counterJavaScriptHTML" aria-live="off">0</span>
+    <text id="counterJavaScript"></text>
+    <button type="button" onClick="onClick()">click me repeatedly</button>
+    <text id="greeting" aria-live="off" role=""> </text>
 
- </head>
+    <br>
+    <br>
 
+    <a href="https://raw.githubusercontent.com/CleezyITP/CleezyITP.github.io/master/ProcessingWorkshop/example2source">access code</a>
 
-<body>
+    <script type="text/javascript">
+      var counterJavaScript = 0;
+      var greeting= 0;
 
- <h1>Example #2</h1>
- <span>Number of times clicked:</span> <span id="counterJavaScriptHTML" aria-live="off">0</span>
- <text id="counterJavaScript"></text>
- <button type="button" onClick="onClick()">click me repeatedly</button>
- <text id="greeting" aria-live="off" role=""> </text>
-<br>
-<br>
- <a href="https://raw.githubusercontent.com/CleezyITP/CleezyITP.github.io/master/ProcessingWorkshop/example2source">access code</a>
+      function onClick() {
+        counterJavaScript += 1;
 
+        document.getElementById("counterJavaScriptHTML").innerHTML = counterJavaScript;
 
-
-<!-- begin javascript -->
-
-<script type="text/javascript">
- var counterJavaScript = 0;
- var greeting= 0;
-
-function onClick() {
-counterJavaScript += 1;
-        
-document.getElementById("counterJavaScriptHTML").innerHTML = counterJavaScript;
-
-if (counterJavaScript > 1 && counterJavaScript < 3) {
-
-greeting = "what do you want?";
-document.getElementById("counterJavaScriptHTML").setAttribute("aria-live", "polite");
-document.getElementById("greeting").innerHTML = greeting;
-document.getElementById("greeting").setAttribute("aria-live", "polite");
-
-
-} 
-else if (counterJavaScript >5 && counterJavaScript < 8) {
-document.getElementById("greeting").innerHTML = greeting;
-greeting = "that's annoying";
-document.getElementById("counterJavaScriptHTML").setAttribute("aria-live", "assertive");
-document.getElementById("greeting").setAttribute("role", "alert");
-
-
-
-} else if (counterJavaScript >8 ) {
-document.getElementById("greeting").innerHTML = greeting;
-greeting = "arrrgh!";
-document.getElementById("greeting").setAttribute("role", "alert");
-
-} 
-
-};
-    
-   
- </script>
-
-</body>
-
+        if (counterJavaScript > 1 && counterJavaScript < 3) {
+          greeting = "what do you want?";
+          document.getElementById("counterJavaScriptHTML").setAttribute("aria-live", "polite");
+          document.getElementById("greeting").innerHTML = greeting;
+          document.getElementById("greeting").setAttribute("aria-live", "polite");
+        } else if (counterJavaScript >5 && counterJavaScript < 8) {
+          document.getElementById("greeting").innerHTML = greeting;
+          greeting = "that's annoying";
+          document.getElementById("counterJavaScriptHTML").setAttribute("aria-live", "assertive");
+          document.getElementById("greeting").setAttribute("role", "alert");
+        } else if (counterJavaScript >8 ) {
+          document.getElementById("greeting").innerHTML = greeting;
+          greeting = "arrrgh!";
+          document.getElementById("greeting").setAttribute("role", "alert");
+        }
+      };
+    </script>
+  </body>
 </html>
