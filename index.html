@@ -27,18 +27,17 @@
         if (counterJavaScript > 1 && counterJavaScript < 3) {
           greeting = "what do you want?";
           counterEl.setAttribute("aria-live", "polite");
-          greetingEl.innerHTML = greeting;
           greetingEl.setAttribute("aria-live", "polite");
         } else if (counterJavaScript >5 && counterJavaScript < 8) {
-          greetingEl.innerHTML = greeting;
           greeting = "that's annoying";
           counterEl.setAttribute("aria-live", "assertive");
           greetingEl.setAttribute("role", "alert");
         } else if (counterJavaScript >8 ) {
-          greetingEl.innerHTML = greeting;
           greeting = "arrrgh!";
           greetingEl.setAttribute("role", "alert");
         }
+
+        greetingEl.innerHTML = greeting;
       };
     </script>
   </body>
