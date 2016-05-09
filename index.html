@@ -17,27 +17,28 @@
 
     <script type="text/javascript">
       var counterJavaScript = 0;
-      var greeting= 0;
+      var greeting = 0;
+      var counterEl = document.querySelector("#counterJavaScriptHTML");
+      var greetingEl = document.querySelector("#greeting");
 
       function onClick() {
         counterJavaScript += 1;
-
-        document.getElementById("counterJavaScriptHTML").innerHTML = counterJavaScript;
+        counterEl.innerHTML = counterJavaScript;
 
         if (counterJavaScript > 1 && counterJavaScript < 3) {
           greeting = "what do you want?";
-          document.getElementById("counterJavaScriptHTML").setAttribute("aria-live", "polite");
-          document.getElementById("greeting").innerHTML = greeting;
-          document.getElementById("greeting").setAttribute("aria-live", "polite");
+          counterEl.setAttribute("aria-live", "polite");
+          greetingEl.innerHTML = greeting;
+          greetingEl.setAttribute("aria-live", "polite");
         } else if (counterJavaScript >5 && counterJavaScript < 8) {
-          document.getElementById("greeting").innerHTML = greeting;
+          greetingEl.innerHTML = greeting;
           greeting = "that's annoying";
-          document.getElementById("counterJavaScriptHTML").setAttribute("aria-live", "assertive");
-          document.getElementById("greeting").setAttribute("role", "alert");
+          counterEl.setAttribute("aria-live", "assertive");
+          greetingEl.setAttribute("role", "alert");
         } else if (counterJavaScript >8 ) {
-          document.getElementById("greeting").innerHTML = greeting;
+          greetingEl.innerHTML = greeting;
           greeting = "arrrgh!";
-          document.getElementById("greeting").setAttribute("role", "alert");
+          greetingEl.setAttribute("role", "alert");
         }
       };
     </script>
